@@ -3,7 +3,7 @@ import React from 'react'
 function IngredItem(props) {
     return(
        <div className="ingred-item">
-            <p>{props.item.name} {props.item.price}</p>
+            <p>{props.item.name} €{(Math.round(props.item.price * props.size * 100)/100).toFixed(2)}</p>
 
             <input
                 type="checkbox"
