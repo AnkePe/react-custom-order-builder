@@ -12,7 +12,7 @@ function Overview(props) {
             <div>
                 <h3>Pizza {props.allPizzasArray.indexOf(pizza) + 1}</h3>
                 <PizzaIngredList key={props.allPizzasArray.indexOf(pizza)} ingredients={pizza.pizzaIngr}/>
-                <p>{pizza.pizzaPrice}</p>
+                <p>€{pizza.pizzaPrice}</p>
                 <button name={props.allPizzasArray.indexOf(pizza)} onClick={props.handleClickDeletePizza}>Delete pizza</button>
             </div>
         )

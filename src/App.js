@@ -7,7 +7,7 @@ class App extends React.Component {
     constructor() {
         super()
         this.state = {
-            ingredients: [...ingredientsData],
+            ingredients: ingredientsData,
             size: 1,
             pizzaObj: {
                 pizzaIngr: [],
@@ -115,7 +115,7 @@ class App extends React.Component {
     }
 
     handleClickConfirmOrder = () => {
-        console.log("confirmation works")
+        alert("Thank you for your order!")
     }
 
 
