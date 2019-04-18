@@ -1,7 +1,7 @@
 import React from 'react'
 import ingredientsData from './ingredientsData'
-import IngredItem from './IngredItem'
 import CreatePizza from './CreatePizza'
+import Overview from './Overview'
 
 class App extends React.Component {
     constructor() {
@@ -11,7 +11,7 @@ class App extends React.Component {
             size: 1,
             pizzaObj: {
                 pizzaIngr: [],
-                pizzaPrice: ""
+                pizzaPrice: 0
             },
             allPizzasArray: []
 
@@ -31,6 +31,18 @@ class App extends React.Component {
         return pizzaPrice
     }
 
+    resetCreatePizza = () => {
+        this.setState(prevState => {
+            const uncheckedIngredients = prevState.ingredients.map(ingredient => {
+                ingredient.chosen = false
+                return ingredient         
+            })
+            return {
+                ingredients: uncheckedIngredients
+            }
+        })
+    }
+
     //eventHandlers
     handleSize = (event) => {
         if (event.target.value === "small") {
@@ -48,12 +60,9 @@ class App extends React.Component {
             console.log("large aangeklikt")
             this.setState({size : 1.2})
             console.log(this.state.size)
-        }
-                  
+        }                  
         }
     
-    
-
     handleChange = (id) => {
         this.setState(prevState => {
             const chosenIngredients = prevState.ingredients.map(ingredient => {
@@ -82,8 +91,10 @@ class App extends React.Component {
                 this.setState({allPizzasArray: this.state.allPizzasArray.concat(this.state.pizzaObj)})
             }
         )
-        // werkt niet???
+        // werkt niet want blijkbaar is die oorspronkelijke array TOCH gewijzigd
         // this.setState({ingredients: ingredientsData})
+       
+        this.resetCreatePizza()
 
         //opgepast: deze console.log geeft de vorige staat weer (asynchroon) !!!!
         //als je de juiste staat wil kennen, consol.loggen in de render() hieronder
@@ -92,7 +103,19 @@ class App extends React.Component {
 
    
     handleClickDelete = () => {
-        console.log("Delete")
+        this.resetCreatePizza()
+    }
+
+    handleClickDeletePizza = (e) => {
+        console.log("delete pizza werkt", e.target.name)
+        // je haalt er 1 uit en dan verandert de oorspronkelijke array
+        this.state.allPizzasArray.splice(e.target.name, 1)     
+                
+        this.setState({allPizzasArray : this.state.allPizzasArray})
+    }
+
+    handleClickConfirmOrder = () => {
+        console.log("confirmation works")
     }
 
 
@@ -107,7 +130,7 @@ class App extends React.Component {
            
             <div>
                  
-                <p>lijst ingredienten</p>
+                <h1>Create your pizza</h1>
                 <div className="ingred-list">
                    {/* {ingredItems} */}
                    <CreatePizza
@@ -115,10 +138,17 @@ class App extends React.Component {
                         size={this.state.size}
                         getPizzaIngr={this.getPizzaIngr}
                         getPizzaPrice={this.getPizzaPrice}
+                        //volgende functie doorgeven is niet nodig omdat we ze niet rechtstreeks gebruiken in CreatePizza.js
+                        // resetCreatePizza={this.resetCreatePizza}
                         handleChange={this.handleChange}
                         handleSize={this.handleSize} 
                         handleClickDelete={this.handleClickDelete}
                         handleClickOrder={this.handleClickOrder}/>
+                    <Overview 
+                        allPizzasArray={this.state.allPizzasArray}
+                        handleClickDeletePizza={this.handleClickDeletePizza}
+                        handleClickConfirmOrder={this.handleClickConfirmOrder} />
+                        
              </div>
             </div>
         )
