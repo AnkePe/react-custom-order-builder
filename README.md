@@ -4,6 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 In the project directory, you can run:
 ### `npm start`
 
+
 ## Learning objectives 
 Nu de eerste stappen in de wereld van React gezet zijn, hebben we een beter idee van wat de functie van React in een website is. Namelijk de weergave van de website op basis van de gegevens die zich in de *state* bevinden.
 Wanneer deze state geupdated wordt, zal je website er bijgevolg anders uit zien. De website wordt namelijk reactief obgebouwd uit verschillende *componenten*.
