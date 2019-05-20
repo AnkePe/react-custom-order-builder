@@ -1,10 +1,15 @@
-Team challenge : `duo`
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+### Available Scripts
+In the project directory, you can run:
+### `npm start`
 
 ## Learning objectives 
 Nu de eerste stappen in de wereld van React gezet zijn, hebben we een beter idee van wat de functie van React in een website is. Namelijk de weergave van de website op basis van de gegevens die zich in de *state* bevinden.
 Wanneer deze state geupdated wordt, zal je website er bijgevolg anders uit zien. De website wordt namelijk reactief obgebouwd uit verschillende *componenten*.
 
 > !! Het doel van deze challenge is om beter vertrouwd te raken met zowel de *state* als het hergebruiken van *componenten*.
+Team challenge : `duo`
 
 ## The Mission
 De uitbater van een horeca zaak in de buurt wil zijn horeca zaak moderniseren en jij bent gecontacteerd om dit in goeie banen te leiden.
@@ -15,7 +20,6 @@ In de cocktail bar van je client kunnen creatieve klanten hun eigen cocktail sam
 De uitbater wil zijn zaak echter wat hipper en digitaler maken en wil dat elke tafel zijn bestellingen ook digitaal naar de barman kan sturen.
 
 Uit een eerste gesprek met de uitbater van de zaak wist je volgende informatie te krijgen:
-
 ### Must-have features
 - De klant moet een lijst met alle mogelijke ingredienten te zien krijgen 
 - Deze lijst is logisch opgedeeld in verschillende categorieën (sterke dranken, frisdranken, garneringen, ...)
@@ -33,11 +37,5 @@ Uit een eerste gesprek met de uitbater van de zaak wist je volgende informatie t
 De functionaliteit is er, nu het design nog ;-)
 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-### Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
 
