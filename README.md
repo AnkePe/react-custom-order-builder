@@ -1,8 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-### Available Scripts
-In the project directory, you can run:
-### `npm start`
 
 
 ## Learning objectives 
@@ -36,6 +32,13 @@ Uit een eerste gesprek met de uitbater van de zaak wist je volgende informatie t
 
 ## Progress
 De functionaliteit is er, nu het design nog ;-)
+___
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+### Available Scripts
+In the project directory, you can run:
+### `npm start`
 
 
 
